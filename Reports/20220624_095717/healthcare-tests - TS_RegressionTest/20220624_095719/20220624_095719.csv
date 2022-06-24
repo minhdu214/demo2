@@ -1,0 +1,65 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+healthcare-tests - TS_RegressionTest,Linux - Chrome 99.0.4844.51,,,2022-06-24 09:57:39,2022-06-24 10:02:56,5m - 16.952s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC1_Verify Successful Login,Linux - Chrome 99.0.4844.51,"Verify if users can login successful. 
+
+Steps:
+- Click on 'Book Appointment' button to login
+- Input username and password
+- Click on 'Login' button
+
+Expected result:
+'Appointment' section is displayed after successful login",,2022-06-24 09:57:39,2022-06-24 09:59:15,1m - 35.846s,PASSED
+"comment(""Story: Login to CURA system"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:57:41,2022-06-24 09:57:42,0.371s,PASSED
+"comment(""Given that the user has the valid login information"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:57:42,2022-06-24 09:57:42,0.023s,PASSED
+openBrowser(G_SiteURL),Linux - Chrome 99.0.4844.51,,,2022-06-24 09:57:42,2022-06-24 09:58:52,1m - 10.496s,PASSED
+"click(findTestObject(""Page_CuraHomepage/btn_MakeAppointment""))",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:58:52,2022-06-24 09:58:55,3.106s,PASSED
+"setText(findTestObject(""Page_Login/txt_UserName""), Username)",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:58:55,2022-06-24 09:59:01,5.905s,PASSED
+"setText(findTestObject(""Page_Login/txt_Password""), Password)",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:01,2022-06-24 09:59:07,5.320s,PASSED
+"comment(""When he logins to CURA system"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:07,2022-06-24 09:59:07,0.017s,PASSED
+"click(findTestObject(""Page_Login/btn_Login""))",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:07,2022-06-24 09:59:10,2.860s,PASSED
+"comment(""Then he should be able to login successfully"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:10,2022-06-24 09:59:10,0.008s,PASSED
+"landingPage = verifyElementPresent(findTestObject(""Page_CuraAppointment/div_Appointment""), G_Timeout)",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:10,2022-06-24 09:59:12,2.203s,PASSED
+closeBrowser(),Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:12,2022-06-24 09:59:13,1.164s,PASSED
+Video,Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:15,2022-06-24 09:59:15,0.001s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC2_Verify Successful Appointment,Linux - Chrome 99.0.4844.51,"Verify if users can book an appointment sucessfully.
+Pre-condition: Users have already logged in
+
+Steps:
+- Fill in appoinment's information
+- Click on appointment's button
+
+Expected results:
+Appointment Confirmation page is displayed",,2022-06-24 09:59:15,2022-06-24 10:00:53,1m - 37.379s,PASSED
+"comment(""Story: Book an appointment"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:16,2022-06-24 09:59:16,0.000s,PASSED
+"comment(""Given that the user has logged into their account"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:16,2022-06-24 09:59:16,0.000s,PASSED
+openBrowser(G_SiteURL),Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:16,2022-06-24 09:59:44,28.124s,PASSED
+"callTestCase(findTestCase(""Common Test Cases/Login""), [""Username"":""John Doe"", ""Password"":""ThisIsNotAPassword""], STOP_ON_FAILURE)",Linux - Chrome 99.0.4844.51,,,2022-06-24 09:59:44,2022-06-24 10:00:04,20.333s,PASSED
+"comment(""And Appointment page is displayed"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:04,2022-06-24 10:00:04,0.015s,PASSED
+if (true),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:04,2022-06-24 10:00:28,23.352s,PASSED
+"comment(""When he fills in valid information in Appointment page"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:28,2022-06-24 10:00:28,0.002s,PASSED
+"click(findTestObject(""Page_CuraAppointment/btn_BookAppointment""))",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:28,2022-06-24 10:00:30,2.624s,PASSED
+"verifyTextPresent(""Appointment Confirmation"", false)",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:30,2022-06-24 10:00:33,2.692s,PASSED
+"comment(""Then he should be able to book a new appointment"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:33,2022-06-24 10:00:33,0.003s,PASSED
+if (true),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:33,2022-06-24 10:00:47,13.828s,PASSED
+takeScreenshot(),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:47,2022-06-24 10:00:49,2.702s,PASSED
+closeBrowser(),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:49,2022-06-24 10:00:50,0.869s,PASSED
+Video,Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:53,2022-06-24 10:00:53,0.001s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC3_Visual Testing Example,Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:53,2022-06-24 10:02:56,2m - 3.001s,PASSED
+"comment(""Story: Book an appointment"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:53,2022-06-24 10:00:53,0.016s,PASSED
+"comment(""Given that the user has logged into their account"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:53,2022-06-24 10:00:53,0.008s,PASSED
+openBrowser(G_SiteURL),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:00:53,2022-06-24 10:01:15,22.056s,PASSED
+"takeScreenshotAsCheckpoint(""login page"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:01:15,2022-06-24 10:01:23,7.274s,PASSED
+"callTestCase(findTestCase(""Common Test Cases/Login""), [""Username"":""John Doe"", ""Password"":""ThisIsNotAPassword""], STOP_ON_FAILURE)",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:01:23,2022-06-24 10:01:41,18.036s,PASSED
+"comment(""And Appointment page is displayed"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:01:41,2022-06-24 10:01:41,0.002s,PASSED
+if (true),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:01:41,2022-06-24 10:02:07,26.766s,PASSED
+"comment(""When he fills in valid information in Appointment page"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:07,2022-06-24 10:02:07,0.002s,PASSED
+"click(findTestObject(""Page_CuraAppointment/btn_BookAppointment""))",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:07,2022-06-24 10:02:10,2.636s,PASSED
+"verifyTextPresent(""Appointment Confirmation"", false)",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:10,2022-06-24 10:02:12,2.405s,PASSED
+"comment(""Then he should be able to book a new appointment"")",Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:12,2022-06-24 10:02:12,0.003s,PASSED
+if (true),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:12,2022-06-24 10:02:50,37.817s,PASSED
+takeScreenshot(),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:50,2022-06-24 10:02:52,1.912s,PASSED
+closeBrowser(),Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:52,2022-06-24 10:02:53,0.922s,PASSED
+Video,Linux - Chrome 99.0.4844.51,,,2022-06-24 10:02:56,2022-06-24 10:02:56,0.001s,PASSED

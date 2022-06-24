@@ -1,0 +1,112 @@
+1
+00:00:00,084 --> 00:00:00,089
+1. comment("Story: Book an appointment")
+
+2
+00:00:00,089 --> 00:00:00,089
+5. comment("Given that the user has logged into their account")
+
+3
+00:00:00,089 --> 00:00:05,313
+9. openBrowser(G_SiteURL)
+
+4
+00:00:05,316 --> 00:00:05,534
+13. callTestCase(findTestCase("Common Test Cases/Login"), ["Username":"John Doe", "Password":"ThisIsNotAPassword"], STOP_ON_FAILURE)
+
+5
+00:00:05,535 --> 00:00:06,320
+1. click(findTestObject("Page_CuraHomepage/btn_MakeAppointment"))
+
+6
+00:00:06,321 --> 00:00:07,088
+5. setText(findTestObject("Page_Login/txt_UserName"), Username)
+
+7
+00:00:07,098 --> 00:00:07,786
+9. setText(findTestObject("Page_Login/txt_Password"), Password)
+
+8
+00:00:07,786 --> 00:00:08,675
+13. click(findTestObject("Page_Login/btn_Login"))
+
+9
+00:00:08,677 --> 00:00:09,229
+17. landingPage = verifyElementPresent(findTestObject("Page_CuraAppointment/div_Appointment"), G_Timeout)
+
+10
+00:00:09,229 --> 00:00:09,231
+17. comment("And Appointment page is displayed")
+
+11
+00:00:09,232 --> 00:00:09,233
+21. if (true)
+
+12
+00:00:09,233 --> 00:00:09,888
+1. selectOptionByLabel(findTestObject("Page_CuraAppointment/lst_Facility"), "Hongkong CURA Healthcare Center", false)
+
+13
+00:00:09,890 --> 00:00:10,271
+5. check(findTestObject("Page_CuraAppointment/chk_Medicaid"))
+
+14
+00:00:10,273 --> 00:00:10,707
+9. check(findTestObject("Page_CuraAppointment/chk_Readmission"))
+
+15
+00:00:10,708 --> 00:00:11,470
+13. setText(findTestObject("Page_CuraAppointment/txt_VisitDate"), "27/12/2016")
+
+16
+00:00:11,472 --> 00:00:12,292
+17. setText(findTestObject("Page_CuraAppointment/txt_Comment"), "Please make appointment as soon as possible.")
+
+17
+00:00:12,294 --> 00:00:12,297
+25. comment("When he fills in valid information in Appointment page")
+
+18
+00:00:12,298 --> 00:00:12,962
+29. click(findTestObject("Page_CuraAppointment/btn_BookAppointment"))
+
+19
+00:00:12,965 --> 00:00:13,308
+33. verifyTextPresent("Appointment Confirmation", false)
+
+20
+00:00:13,309 --> 00:00:13,313
+37. comment("Then he should be able to book a new appointment")
+
+21
+00:00:13,314 --> 00:00:13,315
+41. if (true)
+
+22
+00:00:13,317 --> 00:00:13,662
+1. verifyMatch("Hongkong CURA Healthcare Center", getText(findTestObject("Page_AppointmentConfirmation/lbl_Facility")), false)
+
+23
+00:00:13,663 --> 00:00:13,984
+5. verifyMatch("Yes", getText(findTestObject("Page_AppointmentConfirmation/lbl_HospitalReadmission")), false)
+
+24
+00:00:13,985 --> 00:00:14,310
+9. verifyMatch("Medicaid", getText(findTestObject("Page_AppointmentConfirmation/lbl_Program")), false)
+
+25
+00:00:14,310 --> 00:00:14,639
+13. verifyMatch("27/12/2016", getText(findTestObject("Page_AppointmentConfirmation/lbl_VisitDate")), false)
+
+26
+00:00:14,641 --> 00:00:14,976
+17. verifyMatch("Please make appointment as soon as possible.", getText(findTestObject("Page_AppointmentConfirmation/lbl_Comment")), false)
+
+27
+00:00:14,977 --> 00:00:15,395
+45. takeScreenshot()
+
+28
+00:00:15,398 --> 00:00:16,092
+49. closeBrowser()
+

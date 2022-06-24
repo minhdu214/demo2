@@ -1,0 +1,36 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+healthcare-tests - TS_RegressionTest,,,,2022-06-24 09:57:39,2022-06-24 09:58:00,21.260s,FAILED
+,,,,,,,
+Test Cases/Main Test Cases/TC1_Verify Successful Login,,"Verify if users can login successful. 
+
+Steps:
+- Click on 'Book Appointment' button to login
+- Input username and password
+- Click on 'Login' button
+
+Expected result:
+'Appointment' section is displayed after successful login",,2022-06-24 09:57:39,2022-06-24 09:57:51,11.069s,FAILED
+"comment(""Story: Login to CURA system"")",,,,2022-06-24 09:57:41,2022-06-24 09:57:42,0.376s,PASSED
+"comment(""Given that the user has the valid login information"")",,,,2022-06-24 09:57:42,2022-06-24 09:57:42,0.017s,PASSED
+openBrowser(G_SiteURL),,,,2022-06-24 09:57:42,2022-06-24 09:57:48,6.484s,FAILED
+Video,,,,2022-06-24 09:57:50,2022-06-24 09:57:51,0.001s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC2_Verify Successful Appointment,,"Verify if users can book an appointment sucessfully.
+Pre-condition: Users have already logged in
+
+Steps:
+- Fill in appoinment's information
+- Click on appointment's button
+
+Expected results:
+Appointment Confirmation page is displayed",,2022-06-24 09:57:51,2022-06-24 09:57:55,4.814s,FAILED
+"comment(""Story: Book an appointment"")",,,,2022-06-24 09:57:51,2022-06-24 09:57:51,0.009s,PASSED
+"comment(""Given that the user has logged into their account"")",,,,2022-06-24 09:57:51,2022-06-24 09:57:51,0.007s,PASSED
+openBrowser(G_SiteURL),,,,2022-06-24 09:57:51,2022-06-24 09:57:53,2.284s,FAILED
+Video,,,,2022-06-24 09:57:55,2022-06-24 09:57:55,0.002s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC3_Visual Testing Example,,,,2022-06-24 09:57:55,2022-06-24 09:58:00,4.620s,FAILED
+"comment(""Story: Book an appointment"")",,,,2022-06-24 09:57:56,2022-06-24 09:57:56,0.008s,PASSED
+"comment(""Given that the user has logged into their account"")",,,,2022-06-24 09:57:56,2022-06-24 09:57:56,0.006s,PASSED
+openBrowser(G_SiteURL),,,,2022-06-24 09:57:56,2022-06-24 09:57:58,2.137s,FAILED
+Video,,,,2022-06-24 09:58:00,2022-06-24 09:58:00,0.001s,PASSED
